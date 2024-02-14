@@ -67,7 +67,6 @@ import {
 } from "@plasmicapp/react-web/lib/data-sources";
 
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
-import { CustomUpload } from "../../CustomUpload"; // plasmic-import: wYAPpfUrJlKQ/codeComponent
 import { UploadWrapper } from "@plasmicpkgs/antd5/skinny/registerUpload";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { AntdDatePicker } from "@plasmicpkgs/antd5/skinny/registerDatePicker";
@@ -101,7 +100,6 @@ export const PlasmicAccount__ArgProps = new Array<ArgPropType>();
 export type PlasmicAccount__OverridesType = {
   root?: Flex__<"div">;
   modal?: Flex__<typeof AntdModal>;
-  customUpload?: Flex__<typeof CustomUpload>;
   upload?: Flex__<typeof UploadWrapper>;
   button?: Flex__<typeof AntdButton>;
   dateTimePicker?: Flex__<typeof AntdDatePicker>;
@@ -411,12 +409,6 @@ function PlasmicAccount__RenderFunc(props: {
               hasGap={true}
               className={classNames(projectcss.all, sty.freeBox___1LPgs)}
             >
-              <CustomUpload
-                data-plasmic-name={"customUpload"}
-                data-plasmic-override={overrides.customUpload}
-                className={classNames("__wab_instance", sty.customUpload)}
-              />
-
               <UploadWrapper
                 data-plasmic-name={"upload"}
                 data-plasmic-override={overrides.upload}
@@ -933,7 +925,6 @@ const PlasmicDescendants = {
   root: [
     "root",
     "modal",
-    "customUpload",
     "upload",
     "button",
     "dateTimePicker",
@@ -943,14 +934,12 @@ const PlasmicDescendants = {
   ],
   modal: [
     "modal",
-    "customUpload",
     "upload",
     "button",
     "dateTimePicker",
     "radioGroup2",
     "radioGroup"
   ],
-  customUpload: ["customUpload"],
   upload: ["upload", "button"],
   button: ["button"],
   dateTimePicker: ["dateTimePicker"],
@@ -964,7 +953,6 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   modal: typeof AntdModal;
-  customUpload: typeof CustomUpload;
   upload: typeof UploadWrapper;
   button: typeof AntdButton;
   dateTimePicker: typeof AntdDatePicker;
@@ -1076,7 +1064,6 @@ export const PlasmicAccount = Object.assign(
   {
     // Helper components rendering sub-elements
     modal: makeNodeComponent("modal"),
-    customUpload: makeNodeComponent("customUpload"),
     upload: makeNodeComponent("upload"),
     button: makeNodeComponent("button"),
     dateTimePicker: makeNodeComponent("dateTimePicker"),
